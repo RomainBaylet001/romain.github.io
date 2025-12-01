@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Romain Baylet Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">Romain Baylet</a>
+        <span class="tagline">Fine Art Photography</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Portfolio</h1>
+        <p>
+          A selection of personal work, weddings and portraits. 
+          Available for commissions and print inquiries on request.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="grid gallery-grid prints-grid">
+          <!-- Repeat this block for each image you want to show -->
+          <article class="print-card">
+            <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
+            <div class="print-info">
+              <h2>Morning Fog</h2>
+              <p class="print-meta">Personal work</p>
+            </div>
+          </article>
+
+          <article class="print-card">
+            <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
+            <div class="print-info">
+              <h2>Silent Street</h2>
+              <p class="print-meta">Travel</p>
+            </div>
+          </article>
+
+          <article class="print-card">
+            <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
+            <div class="print-info">
+              <h2>Coastal Wind</h2>
+              <p class="print-meta">Landscape</p>
+            </div>
+          </article>
+
+          <article class="print-card">
+            <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
+            <div class="print-info">
+              <h2>Quiet Room</h2>
+              <p class="print-meta">Interior</p>
+            </div>
+          </article>
+
+          <article class="print-card">
+            <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
+            <div class="print-info">
+              <h2>City Evening</h2>
+              <p class="print-meta">Urban</p>
+            </div>
+          </article>
+
+          <article class="print-card">
+            <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
+            <div class="print-info">
+              <h2>Stillness</h2>
+              <p class="print-meta">Portrait</p>
+            </div>
+          </article>
+
+          <!-- Add more items as needed -->
+        </div>
+
+        <p class="prints-note">
+          For commissions, collaborations or future print releases, please use the 
+          <a href="contact.html">contact form</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Romain Baylet</span>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
