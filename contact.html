@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <title>Contact – Romain Baylet Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -26,44 +28,28 @@
     <section class="page-hero small">
       <div class="container">
         <h1>Contact</h1>
-        <p>For bookings, collaborations or future print inquiries.</p>
+        <p>Bookings, collaborations and print inquiries.</p>
       </div>
     </section>
 
     <section class="page-content">
       <div class="container contact-layout">
+        
         <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-          <label>
-            Name *
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email *
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Subject
-            <input type="text" name="subject" />
-          </label>
-          <label>
-            Message *
-            <textarea name="message" rows="6" required></textarea>
-          </label>
+          <label>Name *<input type="text" name="name" required /></label>
+          <label>Email *<input type="email" name="email" required /></label>
+          <label>Subject<input type="text" name="subject" /></label>
+          <label>Message *<textarea name="message" rows="6" required></textarea></label>
           <button type="submit" class="btn-primary">Send Message</button>
-          <p class="form-note">
-            This form uses your email app to send the message. Later, you can connect a service
-            like Formspree or similar for a more advanced setup.
-          </p>
+          <p class="form-note">This uses your email app. Later we can connect a real backend.</p>
         </form>
 
         <div class="contact-details">
           <h2>Details</h2>
           <p><strong>Email:</strong> your-email@example.com</p>
-          <p><strong>Based in:</strong> Europe &amp; Asia</p>
-          <p>
-            When you reach out, please include your location, date and a short description of your project.
-          </p>
+          <p><strong>Based in:</strong> Europe & Asia</p>
         </div>
+
       </div>
     </section>
   </main>
@@ -71,11 +57,9 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
