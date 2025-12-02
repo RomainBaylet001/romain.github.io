@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <title>Portfolio – Romain Baylet Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -26,68 +28,23 @@
     <section class="page-hero">
       <div class="container">
         <h1>Portfolio</h1>
-        <p>
-          A selection of personal work, weddings and portraits. 
-          Available for commissions and print inquiries on request.
-        </p>
+        <p>A curated selection of fine art photographs, weddings, portraits and personal work.</p>
       </div>
     </section>
 
     <section class="page-content">
-      <div class="container">
-        <div class="grid gallery-grid prints-grid">
-          <article class="print-card">
-            <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
-            <div class="print-info">
-              <h2>Morning Fog</h2>
-              <p class="print-meta">Personal work</p>
-            </div>
-          </article>
-
-          <article class="print-card">
-            <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
-            <div class="print-info">
-              <h2>Silent Street</h2>
-              <p class="print-meta">Travel</p>
-            </div>
-          </article>
-
-          <article class="print-card">
-            <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
-            <div class="print-info">
-              <h2>Coastal Wind</h2>
-              <p class="print-meta">Landscape</p>
-            </div>
-          </article>
-
-          <article class="print-card">
-            <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
-            <div class="print-info">
-              <h2>Quiet Room</h2>
-              <p class="print-meta">Interior</p>
-            </div>
-          </article>
-
-          <article class="print-card">
-            <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
-            <div class="print-info">
-              <h2>City Evening</h2>
-              <p class="print-meta">Urban</p>
-            </div>
-          </article>
-
-          <article class="print-card">
-            <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
-            <div class="print-info">
-              <h2>Stillness</h2>
-              <p class="print-meta">Portrait</p>
-            </div>
-          </article>
+      <div class="container prints-grid">
+        <div class="grid gallery-grid">
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-1.jpg" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-2.jpg" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-3.jpg" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-4.jpg" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-5.jpg" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-6.jpg" /></div></div>
         </div>
 
         <p class="prints-note">
-          For commissions, collaborations or future print releases, please use the 
-          <a href="contact.html">contact form</a>.
+          For bookings, commissions or print inquiries, please use the <a href="contact.html">contact form</a>.
         </p>
       </div>
     </section>
@@ -96,11 +53,9 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
