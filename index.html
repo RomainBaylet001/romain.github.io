@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Romain Baylet – Fine Art Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Luxury fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,9 +30,11 @@
       <!-- Replace hero.jpg with one of your photos -->
       <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
       <div class="hero-content container">
-        <h1>Timeless, poetic photography.</h1>
-        <p>
+        <p class="hero-kicker">Fine Art Photography</p>
+        <h1>Timeless, poetic images for people who feel deeply.</h1>
+        <p class="hero-subtitle">
           Weddings, portraits and personal work with a quiet, cinematic feel.
+          Based in Europe and Asia, available worldwide.
         </p>
         <a href="portfolio.html" class="btn-primary">View Portfolio</a>
       </div>
@@ -39,20 +43,25 @@
     <section class="home-intro">
       <div class="container two-column">
         <div>
-          <h2>Elegant images for people who feel deeply.</h2>
+          <h2>Photography that feels like memory.</h2>
           <p>
-            I create photographs that feel like memories: soft, honest and full of atmosphere.
-            My work is inspired by cinema, travel and the small, fragile moments most people overlook.
+            I create work that is calm, atmospheric and honest. The focus is always on real gestures,
+            subtle details and the quiet tension between people and places.
           </p>
           <p>
-            Based in Europe and Asia, available for destination work worldwide.
+            My background in fine dining and wine taught me to notice what most people miss.
+            Now I bring that same attention to every frame I shoot.
           </p>
-          <a href="about.html" class="text-link">More about me →</a>
+          <a href="about.html" class="text-link">More about Romain →</a>
         </div>
         <div class="stacked-images">
           <!-- Replace with your real images -->
-          <img src="images/home-1.jpg" alt="Fine art photo 1" />
-          <img src="images/home-2.jpg" alt="Fine art photo 2" />
+          <div class="stacked-frame">
+            <img src="images/home-1.jpg" alt="Fine art photograph 1" />
+          </div>
+          <div class="stacked-frame stacked-frame-offset">
+            <img src="images/home-2.jpg" alt="Fine art photograph 2" />
+          </div>
         </div>
       </div>
     </section>
@@ -60,28 +69,40 @@
     <section class="home-prints">
       <div class="container">
         <div class="section-header">
-          <h2>Selected work</h2>
+          <h3>Selected work</h3>
           <a href="portfolio.html" class="text-link">See full portfolio →</a>
         </div>
         <div class="grid gallery-grid">
-          <!-- 6 sample slots, replace src + alt -->
+          <!-- 6 sample slots, replace src + alt with your photos -->
           <div class="gallery-item">
-            <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
+            <div class="gallery-frame">
+              <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
+            </div>
           </div>
         </div>
       </div>
