@@ -5,16 +5,19 @@
   <title>Contact – Romain Baylet Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
         <a href="index.html">Romain Baylet</a>
         <span class="tagline">Fine Art Photography</span>
       </div>
+
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -24,42 +27,59 @@
     </div>
   </header>
 
-  <main class="page">
+  <main>
+    <!-- PAGE HERO -->
     <section class="page-hero small">
       <div class="container">
         <h1>Contact</h1>
-        <p>Bookings, collaborations and print inquiries.</p>
+        <p>Bookings, collaborations and print enquiries.</p>
       </div>
     </section>
 
+    <!-- CONTENT -->
     <section class="page-content">
       <div class="container contact-layout">
-        
-        <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-          <label>Name *<input type="text" name="name" required /></label>
-          <label>Email *<input type="email" name="email" required /></label>
-          <label>Subject<input type="text" name="subject" /></label>
-          <label>Message *<textarea name="message" rows="6" required></textarea></label>
-          <button type="submit" class="btn-primary">Send Message</button>
-          <p class="form-note">This uses your email app. Later we can connect a real backend.</p>
-        </form>
+
+        <div>
+          <p>
+            For commissions, exhibitions or print enquiries, please reach out by email.
+            I read everything and reply personally.
+          </p>
+          <p style="margin-top: 10px;">
+            You can write in English or French.
+          </p>
+        </div>
 
         <div class="contact-details">
-          <h2>Details</h2>
-          <p><strong>Email:</strong> your-email@example.com</p>
-          <p><strong>Based in:</strong> Europe & Asia</p>
+          <h2>Contact</h2>
+
+          <p class="contact-email-main">
+            <a href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
+          </p>
+
+          <p style="margin-top: 8px; font-size: 0.85rem; color: #9a9184;">
+            Click the address to open your email app.
+          </p>
         </div>
 
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <div>
+        <a href="mailto:romainbaylet@icloud.com" style="margin-right: 18px;">Email</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      </div>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
+
 </body>
 </html>
