@@ -27,51 +27,78 @@
     </div>
   </header>
 
-  <main class="contact-wrapper">
-    <!-- PAGE HERO -->
-    <section class="page-hero small">
+  <main class="contact-page">
+    <section class="contact-hero">
       <div class="container">
-        <h1>Contact</h1>
-        <p>For commissions, collaborations and fine art print enquiries.</p>
+        <h1 class="contact-title">Get in touch</h1>
       </div>
     </section>
 
-    <!-- LUXE CONTACT CARD -->
-    <section class="contact-section">
+    <section class="contact-form-section">
       <div class="container">
-        <div class="contact-card">
-          <p class="contact-card-label">Enquiries</p>
+        <form class="contact-form" id="contactForm" autocomplete="on">
+          <label class="field">
+            <span class="field-label">Name *</span>
+            <input class="field-input" name="name" type="text" required />
+          </label>
 
-          <a class="contact-card-email" href="mailto:romainbaylet@icloud.com">
-            romainbaylet@icloud.com
-          </a>
+          <label class="field">
+            <span class="field-label">Email address *</span>
+            <input class="field-input" name="email" type="email" required />
+          </label>
 
-          <p class="contact-card-note">
-            I reply to all serious enquiries personally.
+          <label class="field">
+            <span class="field-label">Phone</span>
+            <input class="field-input" name="phone" type="tel" />
+          </label>
+
+          <label class="field">
+            <span class="field-label">Message *</span>
+            <textarea class="field-textarea" name="message" rows="6" required></textarea>
+          </label>
+
+          <button class="contact-button" type="submit">Send message</button>
+
+          <p class="contact-note">
+            Or email directly:
+            <a class="contact-email-link" href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
           </p>
-          <p class="contact-card-note">
-            You may write in English or French.
-          </p>
-        </div>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (CONTACT PAGE HAS LINKS) -->
+  <!-- FOOTER (ONLY CONTACT HAS LINKS) -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
       <div class="footer-links">
         <a href="mailto:romainbaylet@icloud.com">Email</a>
         <span class="footer-separator">•</span>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Pure, no-backend solution: opens the visitor's email app with a pre-filled message.
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = (this.name.value || "").trim();
+        const email = (this.email.value || "").trim();
+        const phone = (this.phone.value || "").trim();
+        const message = (this.message.value || "").trim();
+
+        const subject = encodeURIComponent("Website enquiry – Romain Baylet");
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+        );
+
+        window.location.href = `mailto:romainbaylet@icloud.com?subject=${subject}&body=${body}`;
+      });
     </script>
   </footer>
-
 </body>
 </html>
