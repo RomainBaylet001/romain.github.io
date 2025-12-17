@@ -39,7 +39,17 @@
   <section class="contact-form-section">
     <div class="container">
 
-      <!-- IMPORTANT: keep this endpoint -->
+      <!-- SUCCESS PANEL (hidden until sent) -->
+      <div class="contact-success" id="contactSuccess" aria-live="polite">
+        <p class="success-title">Message sent.</p>
+        <p class="success-subtitle">Thank you. I’ll reply personally.</p>
+        <p class="success-small">
+          If you don’t hear back within 48 hours, email directly:
+          <a class="contact-email-link" href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
+        </p>
+      </div>
+
+      <!-- FORM -->
       <form class="contact-form" id="contactForm"
             action="https://formspree.io/f/xeejjjkz"
             method="POST">
@@ -47,7 +57,7 @@
         <!-- Anti-spam honeypot -->
         <input type="text" name="_gotcha" style="display:none">
 
-        <!-- Subject (works in many setups) -->
+        <!-- Subject -->
         <input type="hidden" name="_subject" value="New enquiry – Romain Baylet">
 
         <label class="field">
@@ -74,7 +84,6 @@
           Send message
         </button>
 
-        <!-- Luxe inline status (no redirect) -->
         <p class="form-status" id="formStatus" aria-live="polite"></p>
 
         <p class="contact-note">
@@ -105,24 +114,24 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // AJAX submit -> stays on your page (no Formspree thank-you screen)
     const form = document.getElementById("contactForm");
-    const statusEl = document.getElementById("formStatus");
     const btn = document.getElementById("contactBtn");
+    const statusEl = document.getElementById("formStatus");
+    const successEl = document.getElementById("contactSuccess");
 
-    function setStatus(msg, type) {
+    function setStatus(msg, cls) {
       statusEl.textContent = msg;
       statusEl.classList.remove("is-success", "is-error");
-      if (type) statusEl.classList.add(type);
+      if (cls) statusEl.classList.add(cls);
     }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       setStatus("", null);
+
+      const originalBtnText = btn.textContent;
       btn.disabled = true;
-      btn.style.opacity = "0.65";
-      btn.style.cursor = "not-allowed";
+      btn.textContent = "Sending…";
 
       try {
         const formData = new FormData(form);
@@ -135,16 +144,23 @@
 
         if (res.ok) {
           form.reset();
-          setStatus("Thank you. Your message has been sent.", "is-success");
+          setStatus("Thank you.", "is-success");
+
+          // Fade out form, show success panel
+          form.classList.add("is-sent");
+          successEl.classList.add("is-visible");
+
+          // Prevent tabbing into hidden form
+          [...form.querySelectorAll("input, textarea, button")].forEach(el => el.setAttribute("tabindex", "-1"));
         } else {
           setStatus("Something went wrong. Please email me directly.", "is-error");
+          btn.disabled = false;
+          btn.textContent = originalBtnText;
         }
       } catch (err) {
         setStatus("Network error. Please email me directly.", "is-error");
-      } finally {
         btn.disabled = false;
-        btn.style.opacity = "1";
-        btn.style.cursor = "pointer";
+        btn.textContent = originalBtnText;
       }
     });
   </script>
