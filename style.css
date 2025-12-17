@@ -1,14 +1,21 @@
-/* ===== RESET ===== */
+/* =========================
+   RESET & BASE
+========================= */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #f7f5f0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f7f5f0; /* warm off-white */
   color: #2f2a24;
   line-height: 1.7;
 }
@@ -18,26 +25,48 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .container {
   width: min(980px, 92vw);
   margin: 0 auto;
 }
 
-/* ===== HEADER ===== */
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 0.95rem;
+  color: #6a6256;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(247,245,240,0.95);
+  z-index: 20;
+  background: rgba(247, 245, 240, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e4ded4;
-  z-index: 10;
 }
 
 .header-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 0;
+  justify-content: space-between;
+  padding: 14px 0 12px;
 }
 
 .logo a {
@@ -49,35 +78,43 @@ a {
 
 .tagline {
   display: block;
+  margin-top: 4px;
   font-size: 0.55rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #9a9184;
-  margin-top: 4px;
 }
 
 .main-nav a {
+  margin-left: 18px;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-left: 18px;
   color: #9a9184;
+  transition: color 0.2s ease;
 }
 
-.main-nav a.active,
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active {
   color: #2f2a24;
 }
 
-/* ===== CONTACT ===== */
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page {
+  background-color: #f7f5f0;
+}
+
 .contact-hero {
-  padding: 90px 0 30px;
+  padding: 90px 0 28px;
 }
 
 .contact-title {
   text-align: center;
-  font-family: "Playfair Display", serif;
   font-size: clamp(2.4rem, 4vw, 3.1rem);
+  letter-spacing: 0.01em;
 }
 
 .contact-form-section {
@@ -88,6 +125,10 @@ a {
   max-width: 560px;
   margin: 0 auto;
 }
+
+/* =========================
+   FORM FIELDS
+========================= */
 
 .field {
   padding: 26px 0;
@@ -105,13 +146,15 @@ a {
 .field-input,
 .field-textarea {
   width: 100%;
-  background: transparent;
   border: none;
   border-bottom: 1px solid #d8d0c3;
-  padding: 10px;
+  background: transparent;
+  padding: 10px 8px 12px;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   color: #2f2a24;
   outline: none;
+  transition: border-color 0.2s ease;
 }
 
 .field-input {
@@ -121,6 +164,7 @@ a {
 .field-textarea {
   min-height: 140px;
   resize: vertical;
+  text-align: left;
 }
 
 .field-input:focus,
@@ -128,24 +172,59 @@ a {
   border-bottom-color: #2f2a24;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 .contact-button {
   display: block;
-  margin: 28px auto 0;
-  padding: 14px 30px;
+  margin: 30px auto 0;
+  padding: 14px 32px;
   border-radius: 999px;
   border: 1px solid #2f2a24;
   background: transparent;
+  color: #2f2a24;
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .contact-button:hover {
   background: #2f2a24;
   color: #f7f5f0;
+  transform: translateY(-1px);
 }
+
+.contact-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   FORM STATUS (SUCCESS / ERROR)
+========================= */
+
+.form-status {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #9a9184;
+  min-height: 1.2em;
+}
+
+.form-status.is-success {
+  color: #6a6256;
+}
+
+.form-status.is-error {
+  color: #7a5d55;
+}
+
+/* =========================
+   CONTACT NOTE
+========================= */
 
 .contact-note {
   text-align: center;
@@ -155,15 +234,25 @@ a {
 }
 
 .contact-email-link {
-  border-bottom: 1px solid rgba(47,42,36,0.3);
+  color: #2f2a24;
+  border-bottom: 1px solid rgba(47, 42, 36, 0.3);
+  padding-bottom: 2px;
 }
 
-/* ===== FOOTER ===== */
+.contact-email-link:hover {
+  border-bottom-color: rgba(47, 42, 36, 0.55);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 .site-footer {
   border-top: 1px solid #e4ded4;
   padding: 18px 0;
   font-size: 0.8rem;
   color: #9a9184;
+  background-color: #f7f5f0;
 }
 
 .footer-inner {
@@ -173,10 +262,50 @@ a {
 }
 
 .footer-links {
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
+.footer-links a {
+  color: #9a9184;
+}
+
+.footer-links a:hover {
+  color: #2f2a24;
+}
+
 .footer-separator {
   margin: 0 8px;
+  color: #c1b8aa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
